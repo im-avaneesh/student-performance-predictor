@@ -5,10 +5,9 @@ Includes single-student prediction, CSV batch prediction, and a premium dashboar
 
 📌 Live Demo
 
-🌐 Frontend: your Netlify link
-🔗 Backend API: your Render link
+🌐 Frontend: https://student-performance-predictorr.netlify.app/index.html
+🔗 Backend API: https://student-performance-predictor-1-kais.onrender.com
 
-(Replace after deployment)
 
 🧠 Project Overview
 
@@ -236,5 +235,6 @@ Result history storage
 More features (CGPA, past attendance trends)
 
 Faculty analytics mode
+
 
 Explainable AI (feature contribution graph)
