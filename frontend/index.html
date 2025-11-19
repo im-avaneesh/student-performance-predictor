@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Performance Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+   <div class="header">
+    <div class="brand">
+        <div class="logo">SP</div>
+        <div class="title">
+            <h1>Student Performance Predictor</h1>
+             <p>Predict score · risk · confidence — Premium dashboard</p>
+        </div>
+    </div>
+
+    <!-- ADD THIS BUTTON -->
+    <button class="nav-btn" onclick="window.location.href='csv.html'">
+        Batch Prediction
+    </button>
+</div>
+
+      <div class="brand">
+       
+      </div>
+     
+    </div>
+
+    <div class="layout">
+      <!-- LEFT: form -->
+      <div class="card">
+        <h3>Enter Student Details</h3>
+        <div style="height:12px"></div>
+
+        <div>
+          <label>Attendance (%)</label>
+          <input id="attendance" class="input" type="number" min="0" max="100" placeholder="e.g., 75">
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+          <div>
+            <label>Study Hours / day</label>
+            <input id="studyHours" class="input" type="number" step="0.1" min="0" max="10" placeholder="e.g., 3">
+          </div>
+          <div>
+            <label>Internal Marks (out of 50)</label>
+            <input id="internalMarks" class="input" type="number" min="0" max="50" placeholder="e.g., 35">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+          <div>
+            <label>Assignments Submitted</label>
+            <input id="assignments" class="input" type="number" min="0" max="10" value="0">
+          </div>
+          <div>
+            <label>Activities (0–5)</label>
+            <input id="activities" class="input" type="number" min="0" max="5" value="0">
+          </div>
+        </div>
+
+        <div style="margin-top:16px">
+          <button id="predictBtn" class="button">Predict</button>
+        </div>
+
+        <div class="note">Tip: Use CSV upload page for batch predictions (top-right)</div>
+      </div>
+
+      <!-- RIGHT: result -->
+      <div class="result">
+        <div class="result-top">
+          <div class="result-card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="sub-muted">Predicted Score</div>
+                <div class="score-big"><span id="scoreVal">--</span><span class="small-muted">/100</span></div>
+                <div class="small-muted" id="scoreText">—</div>
+              </div>
+              <div style="text-align:right">
+                <div class="sub-muted">Result</div>
+                <div style="margin-top:8px"><span id="resultBadge" class="badge medium">—</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="sub-muted">Risk Level</div>
+            <div style="margin-top:10px"><span id="riskBadge" class="badge medium">—</span></div>
+
+            <div style="margin-top:12px" class="sub-muted">Confidence</div>
+            <div style="margin-top:8px" class="conf-bar"><div id="confFill" class="conf-fill" style="width:0%"></div></div>
+            <div style="margin-top:8px;font-weight:700"><span id="confVal">--</span>%</div>
+          </div>
+        </div>
+
+        <div class="card chart-card" id="miniChartCard">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="sub-muted">Quick Comparison</div>
+              <div style="font-weight:700;margin-top:6px">Predicted vs Max</div>
+            </div>
+            <div class="small-muted">Model confidence visual</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <canvas id="miniChart" height="90"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
