@@ -1,4 +1,4 @@
-const BASE = "http://127.0.0.1:5000";
+const BASE = "https://student-performance-predictor-1-kais.onrender.com";
 
 document.getElementById("uploadBtn").addEventListener("click", async ()=>{
   const input = document.getElementById("csvFile");
@@ -65,3 +65,4 @@ document.getElementById("csvFile").addEventListener("change", () => {
   const f = document.getElementById("csvFile").files[0];
   document.getElementById("fileName").innerText = f ? f.name : "Click to choose CSV file";
 });
+
