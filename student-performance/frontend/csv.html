@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Batch Prediction — Student Performance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div class="title">
+          <h1>Batch Predictions</h1>
+          <p class="small-muted">Upload CSV → get per-student predictions</p>
+        </div>
+      </div>
+      <div><button class="nav-btn" onclick="window.location.href='index.html'">
+    Single Prediction
+</button>
+</div>
+    </div>
+
+    <div class="csv-layout" style="display:flex;gap:18px;align-items:flex-start">
+
+      <div style="flex:1">
+       <div class="upload-card card">
+    <h3>Upload CSV</h3>
+    <p class="small-muted">Select your CSV file and click upload</p>
+
+    <label class="fileDrop">
+        <input id="csvFile" type="file" accept=".csv" hidden>
+        <span id="fileName">Click to choose CSV file</span>
+    </label>
+
+    <button id="uploadBtn" class="button" style="margin-top:14px;">Upload & Predict</button>
+</div>
+
+
+        <div class="card table-wrap" style="margin-top:16px">
+          <h3>Results</h3>
+          <div style="overflow:auto">
+            <table id="resultsTable">
+              <thead><tr>
+                <th>Att</th><th>Hrs</th><th>Internal</th><th>Assign</th><th>Act</th>
+                <th>Score</th><th>Result</th><th>Risk</th><th>Conf%</th>
+              </tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="csv-right" style="width:360px;">
+
+        <div class="card chart-card">
+          <h3>Class Summary</h3>
+          <canvas id="barChart" height="220"></canvas>
+          <div class="note" id="summaryText">No data yet</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="csv.js"></script>
+</body>
+</html>
