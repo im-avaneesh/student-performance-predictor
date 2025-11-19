@@ -1,5 +1,5 @@
 // endpoint base
-const BASE = "http://127.0.0.1:5000";
+const BASE = "https://student-performance-predictor-1-kais.onrender.com";
 
 const predictBtn = document.getElementById("predictBtn");
 const scoreVal = document.getElementById("scoreVal");
@@ -88,3 +88,4 @@ function setConfidence(v){
   const pct = Math.min(100, Math.max(0, v));
   confFill.style.width = pct + "%";
 }
+
