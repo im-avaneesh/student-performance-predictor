@@ -1,123 +1,109 @@
-Student Performance Predictor (ML + Dashboard UI)
+# 🎓 Student Performance Predictor (ML + Dashboard UI)
 
-A full-stack machine learning application that predicts student performance, risk level, and model confidence using academic behavior metrics.
-Includes single-student prediction, CSV batch prediction, and a premium dashboard UI.
+A full-stack machine learning application that predicts **student performance**, **risk level**, and **model confidence** using key academic behavior metrics.
 
-📌 Live Demo
+It includes:
 
-🌐 Frontend: https://student-performance-predictorr.netlify.app/index.html
-🔗 Backend API: https://student-performance-predictor-1-kais.onrender.com
+* ✨ Single-student prediction
+* 📥 CSV batch prediction
+* 📊 Faculty analytics dashboard
+* 💠 Clean, premium UI optimized for hackathons
 
+---
 
-🧠 Project Overview
+## 📌 Live Demo
+
+🌐 **Frontend:**
+[https://student-performance-predictorr.netlify.app/index.html](https://student-performance-predictorr.netlify.app/index.html)
+
+🔗 **Backend API:**
+[https://student-performance-predictor-1-kais.onrender.com](https://student-performance-predictor-1-kais.onrender.com)
+
+---
+
+## 🧠 Project Overview
 
 This system predicts a student's final performance using:
 
-📘 Attendance (%)
-
-⏳ Study Hours
-
-📝 Internal Marks
-
-📚 Assignments
-
-🎯 Co-curricular Activities
+* 📘 **Attendance (%)**
+* ⏳ **Study Hours per Day**
+* 📝 **Internal Marks**
+* 📚 **Assignments Submitted**
+* 🎯 **Co-curricular Activities**
 
 The ML model outputs:
 
-Predicted Score (0–100)
+* **Predicted Score (0–100)**
+* **Pass / Fail**
+* **Risk Level** (Low / Medium / High)
+* **ML Confidence (%)**
 
-Pass / Fail
+The UI is designed with a **premium dashboard layout**, fully responsive and ideal for demo presentations.
 
-Risk Level (Low / Medium / High)
+---
 
-ML Confidence (%)
+## 🎯 Features
 
-The frontend is designed as a premium dashboard, optimized for hackathons with clean UI, responsive layout, and intuitive visualization.
+### 🔹 1. Single Student Prediction
 
-🎯 Features
-🔹 1. Single Student Prediction
+* Enter 5 input parameters
+* Real-time ML prediction
+* Confidence bar visualization
+* Risk level badge
+* Comparison score chart
 
-Enter the 5 academic parameters
+---
 
-Instant ML prediction
+### 🔹 2. Batch Prediction (CSV Upload)
 
-Beautiful confidence bar
+* Upload a CSV of multiple students
+* Automatic predictions for each row
+* Shows score, result, risk, confidence
+* Auto-generated bar chart
+* Fully responsive
 
-Result + Risk Level badge
+---
 
-Score comparison chart
+### 🔹 3. Machine Learning Model
 
-🔹 2. Batch Prediction (CSV Upload)
+* Trained on 300+ synthetic records
+* Algorithm: **Random Forest Regressor**
+* Achieved **94% R² Score**
 
-Upload a CSV of multiple students
+Confidence is calculated using:
 
-Displays prediction table with:
+* Decision-tree variance
+* Score strength
+* Stability weighting + smoothing
 
-Score
+This avoids unstable 10–30% confidence values and produces clean, meaningful outputs.
 
-Pass/Fail
+---
 
-Risk level
+## 🏗️ Tech Stack
 
-Confidence
+### 🖥 Frontend
 
-Auto-generated bar chart
+* HTML
+* CSS
+* JavaScript
+* Chart.js
+* Netlify (deployment)
 
-🔹 3. High-Quality UI
+### ⚙️ Backend
 
-Premium SaaS-style layout
+* Flask
+* Flask-CORS
+* scikit-learn
+* numpy
+* pandas
+* Render (deployment)
 
-Blue gradient theme
+---
 
-Responsive on desktop + mobile
+## 📂 Project Structure
 
-Professional cards, shadows, graphs
-
-🔹 4. ML Model
-
-Trained on synthetic academic dataset
-
-Algorithm: Random Forest Regressor
-
-Achieved ~94% R² score
-
-Confidence calculated using:
-
-Tree variance
-
-Score strength
-
-Stability weighting
-
-🏗️ Tech Stack
-Frontend
-
-HTML
-
-CSS
-
-JavaScript
-
-Chart.js (for visualizations)
-
-Netlify (hosting)
-
-Backend
-
-Flask
-
-Flask-CORS
-
-scikit-learn
-
-pandas
-
-numpy
-
-Render (hosting)
-
-📂 Project Structure
+```
 student-performance/
 │
 ├── backend/
@@ -134,76 +120,103 @@ student-performance/
 │   ├── csv.js
 │
 └── README.md
+```
 
-⚙️ How to Run Locally
-1️⃣ Install dependencies
+---
+
+## ⚙️ How to Run Locally
+
+### 1️⃣ Install backend dependencies
+
+```
 cd backend
 pip install -r requirements.txt
+```
 
-2️⃣ Start backend
+### 2️⃣ Run backend
+
+```
 python app.py
+```
 
+Backend starts at:
+👉 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-Backend runs at:
-👉 http://127.0.0.1:5000
+### 3️⃣ Open frontend
 
-3️⃣ Open frontend
+Open `index.html` directly in the browser.
 
-Open index.html in any browser.
+---
 
-🌐 Deployment
-🔹 Backend (Render)
+## 🌐 Deployment Instructions
 
-Connect GitHub repo
+### 🔹 Backend (Render)
 
-Root: /backend
+1. Connect GitHub repo
+2. Set **Root Directory:** `/backend`
+3. **Build Command:**
 
-Build: pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
-Start: gunicorn app:app
+4. **Start Command:**
 
-🔹 Frontend (Netlify)
+```
+gunicorn app:app
+```
 
-Drag & drop /frontend folder
+### 🔹 Frontend (Netlify)
 
-Update script.js & csv.js:
+1. Upload the `/frontend` folder
+2. Update API base URL in:
 
+   * `script.js`
+   * `csv.js`
+
+```
 const BASE = "https://your-render-backend-url";
+```
 
-📊 Model Details
-📌 ML Algorithm
+---
 
-RandomForestRegressor (500 trees)
-Works best for mixed numeric features with non-linear patterns.
+## 📊 ML Model Details
 
-📌 Confidence Calculation
+### 📌 Algorithm
 
-Confidence is generated using:
+**RandomForestRegressor (500 trees)**
+Great for mixed numerical features and nonlinear patterns.
 
-Tree Variance (lower variance → higher confidence)
+### 📌 Confidence Calculation
 
-Score Strength (higher score → more stable)
+Based on:
 
-Blended weight system
+✔ Tree Variance
+✔ Score Strength
+✔ Stability Smoothing
 
-Slight smoothing for UI interpretability
+Produces clean, realistic confidence values (70–95%).
 
-This prevents confusing 20–30% confidence values and ensures consistent ML dashboard behavior.
+---
 
-📝 Sample CSV Format
+## 📝 Sample CSV Format
 
-Your CSV must contain these exact columns:
-
+```
 Attendance,StudyHours,InternalMarks,Assignments,Activities
 85,3.5,40,5,3
 60,2,22,2,1
 ...
+```
 
-📘 API Endpoints
-🔹 POST /predict
+---
 
-Input:
+## 📘 API Endpoints
 
+### 🔹 POST `/predict`
+
+**Input**
+
+```json
 {
   "Attendance": 75,
   "StudyHours": 3,
@@ -211,30 +224,33 @@ Input:
   "Assignments": 5,
   "Activities": 4
 }
+```
 
+**Response**
 
-Response:
-
+```json
 {
   "PredictedScore": 66.76,
   "Result": "Pass",
   "Risk": "Medium Risk",
   "Confidence": 74.84
 }
+```
 
-🔹 POST /predict-csv
+---
 
-Upload a CSV file → returns predictions for all rows.
+### 🔹 POST `/predict-csv`
 
-🚀 Future Improvements
+Upload CSV file → returns prediction for each row.
 
-User login dashboard
+---
 
-Result history storage
+## 🚀 Future Improvements
 
-More features (CGPA, past attendance trends)
+* Student & Faculty Login System
+* Save prediction history in database
+* Student-wise performance trends
+* Real dataset integration
+* Explainable AI (feature importance graph)
 
-Faculty analytics mode
-
-
-Explainable AI (feature contribution graph)
+---
