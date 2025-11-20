@@ -1,7 +1,6 @@
 # 🔄 Sprint Retrospective
 
 **Project:** Student Performance Predictor
-**Sprint Duration:** 2-Day Hackathon Sprint
 
 ---
 
@@ -97,3 +96,4 @@ Despite time pressure, the team delivered a **stable, deployable, user-friendly 
 The team collaborated effectively, adapted to challenges, and finished strong.
 
 ---
+
