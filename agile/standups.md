@@ -1,29 +1,83 @@
-Day 1 – Standup
+# 🗓️ Daily Standup Logs
 
-Yesterday: Finalized idea → Student Performance Predictor
+**Project:** Student Performance Predictor
 
-Today: Build ML model, design UI for single predictor
+# Day 1 – Standup
 
-Blockers: Dataset quality & confidence calculation
+### ✔️ What We Completed Yesterday
 
-Next Steps: Integrate backend API with frontend
+* Understood problem statement
+* Defined high-level architecture
+* Decided ML model (Random Forest Regressor)
+* Created initial project directory structure (frontend + backend)
 
-Day 2 – Standup
+### 📌 What We Plan To Do Today
 
-Yesterday: Completed Random Forest training, confidence logic
+* Generate synthetic dataset
+* Train ML model and save `model.pkl`
+* Build backend endpoints (`/predict`, `/predict-csv`)
+* Design main UI for single student predictor
 
-Today: Implement batch CSV upload + faculty dashboard
+### ⚠️ Blockers
 
-Blockers: UI responsiveness
+* Unsure about dataset format initially
+* Needed clarity on score prediction + risk levels
+* Deployment environment not yet selected
 
-Next Steps: Polish CSS and deploy to Render/Netlify
+---
 
-Day 3 – Standup
+# Day 2 – Standup
 
-Yesterday: Finished faculty analytics + charts
+### ✔️ What We Completed Yesterday
 
-Today: Deployment & testing
+* ML model trained (94% R² score)
+* Flask backend fully completed
+* Single predictor UI implemented
+* CSV batch prediction working
 
-Blockers: Render build errors (Python version)
+### 📌 What We Plan To Do Today
 
-Next Steps: Final demo preparation
+* Build faculty dashboard
+* Add charts and analytics
+* Polish UI & add mobile responsiveness
+* Deploy backend (Render) and frontend (Netlify)
+
+### ⚠️ Blockers
+
+* Render Python version mismatch
+* CORS issues while connecting frontend → backend
+* UI alignment issues on faculty page
+
+---
+
+# Final Submission Day – Standup
+
+### ✔️ What We Completed Yesterday
+
+* Faculty dashboard: metrics + charts
+* End-to-end integration completed
+* Deployment fixed and tested
+* Agile documentation (backlog, review, retrospective)
+* README.md updated with demo links
+
+### 📌 What We Plan To Do Today
+
+* Final testing
+* Add screenshots
+* Prepare presentation & pitch
+* Clean up repository
+
+### ⚠️ Blockers
+
+* None — all systems functional
+* Minor time pressure
+* Optional features (student names, database) pushed to future scope
+
+---
+
+# 🏁 Summary
+
+The team maintained short, productive standups throughout the sprint.
+This ensured rapid debugging, fast development, and a fully working ML system within the hackathon period.
+
+---
